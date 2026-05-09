@@ -1,0 +1,437 @@
+/* ===================================
+   旅館またべゑ マルチページ拡張スタイル
+   v2.0 (2026-05-09)
+   =================================== */
+
+/* ============ ナビ アクティブ表示 ============ */
+.nav a.active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* ============ パン屑リスト ============ */
+.breadcrumb {
+  background: var(--color-base);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-top: 65px;
+}
+.breadcrumb-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-muted);
+  align-items: center;
+}
+.breadcrumb-list li::after {
+  content: "›";
+  margin-left: 8px;
+  color: var(--color-muted);
+}
+.breadcrumb-list li:last-child::after { content: ""; }
+.breadcrumb-list a {
+  color: var(--color-main);
+  text-decoration: none;
+}
+.breadcrumb-list a:hover { color: var(--color-accent); }
+.breadcrumb-list .current {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ============ ページヒーロー（小・サブページ用）============ */
+.page-hero {
+  position: relative;
+  min-height: 38vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(27,58,87,0.55) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+.page-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 720px;
+  padding: 60px 24px;
+}
+.page-hero-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 14px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: #E8D9B3;
+  margin-bottom: 12px;
+}
+.page-hero-ja {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.page-hero-sub {
+  font-size: 15px;
+  line-height: 1.8;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  opacity: 0.95;
+}
+
+/* ============ 記事本文（about・cuisine・rooms等共通）============ */
+.article-section {
+  padding: 64px 0;
+}
+.article-section:nth-child(even of .article-section) {
+  background: var(--color-base);
+}
+.article-section h3 {
+  font-size: 22px;
+  color: var(--color-main);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-sub);
+  letter-spacing: .04em;
+}
+.article-section h4 {
+  font-size: 17px;
+  color: var(--color-main);
+  margin: 24px 0 8px;
+}
+.article-section p {
+  margin-bottom: 16px;
+  line-height: 1.9;
+}
+.article-section img {
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+.article-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ============ 引用ブロック（女将の言葉等）============ */
+.okami-quote {
+  background: linear-gradient(135deg, #fff8ee 0%, #f5efe2 100%);
+  border-left: 4px solid var(--color-sub);
+  padding: 28px 32px;
+  margin: 32px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  line-height: 1.9;
+  position: relative;
+}
+.okami-quote::before {
+  content: "「";
+  position: absolute;
+  top: 8px; left: 16px;
+  font-size: 32px;
+  color: var(--color-sub);
+  line-height: 1;
+}
+.okami-quote::after {
+  content: "」";
+  position: absolute;
+  bottom: 8px; right: 16px;
+  font-size: 32px;
+  color: var(--color-sub);
+  line-height: 1;
+}
+.okami-quote p { padding: 0 32px; margin-bottom: 8px; }
+.okami-quote cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 12px;
+}
+
+/* ============ 観光スポットカード ============ */
+.spot-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.spot-card {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 28px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s, box-shadow .3s;
+}
+.spot-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.spot-card-img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.spot-card-body {
+  padding: 24px 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.spot-num {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: 13px;
+  letter-spacing: .2em;
+  color: var(--color-sub);
+  margin-bottom: 4px;
+}
+.spot-card-body h3 {
+  font-size: 22px;
+  color: var(--color-main);
+  margin-bottom: 4px;
+  letter-spacing: .04em;
+}
+.spot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.spot-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-base);
+  color: var(--color-main);
+  border: 1px solid var(--color-border);
+}
+.spot-tag.cycle { background: #e8f0f7; border-color: #b9d3e6; }
+.spot-tag.fish { background: #fde9e2; border-color: #f0c0a8; }
+.spot-tag.family { background: #e8f3e6; border-color: #b3d6ad; }
+.spot-tag.history { background: #f5efe2; border-color: #d8c7a0; }
+.spot-tag.nature { background: #e3eee5; border-color: #a7c8ad; }
+.spot-desc {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+.spot-meta {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+.spot-meta dt { color: var(--color-muted); }
+.spot-meta dd { color: var(--color-text); }
+.spot-meta a { color: var(--color-accent); }
+
+/* ============ モデルコース ============ */
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  border: 2px solid var(--color-border);
+  transition: border-color .2s;
+}
+.course-card:hover { border-color: var(--color-sub); }
+.course-icon { font-size: 32px; margin-bottom: 8px; }
+.course-card h3 {
+  font-size: 17px;
+  color: var(--color-main);
+  margin-bottom: 12px;
+}
+.course-route {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--color-text);
+  text-align: left;
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.course-route span {
+  display: block;
+  position: relative;
+  padding-left: 16px;
+}
+.course-route span::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-sub);
+}
+
+/* ============ ハブ型トップの導線カード ============ */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hub-card {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: transform .3s;
+}
+.hub-card:hover { transform: translateY(-4px); }
+.hub-card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.hub-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%);
+  z-index: 2;
+}
+.hub-card-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px;
+  z-index: 3;
+}
+.hub-card-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: .3em;
+  color: var(--color-sub);
+  margin-bottom: 4px;
+}
+.hub-card h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.hub-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* ============ 観光ハイライト（トップ用カード）============ */
+.sight-highlight {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sight-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s;
+  text-decoration: none;
+  color: var(--color-text);
+}
+.sight-card:hover { transform: translateY(-2px); }
+.sight-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.sight-card-body { padding: 14px 16px 16px; }
+.sight-card h4 {
+  font-size: 15px;
+  color: var(--color-main);
+  margin-bottom: 4px;
+}
+.sight-card p {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* ============ サブページ用CTA ============ */
+.cta-block {
+  background: linear-gradient(135deg, var(--color-main) 0%, #122B40 100%);
+  color: #fff;
+  padding: 56px 24px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+.cta-block h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  letter-spacing: .04em;
+}
+.cta-block p {
+  font-size: 14px;
+  opacity: .9;
+  margin-bottom: 24px;
+}
+.cta-block .btn {
+  background: #fff;
+  color: var(--color-main);
+  font-size: 18px;
+}
+.cta-block .btn:hover { background: var(--color-sub); color: #fff; }
+
+/* ============ レスポンシブ ============ */
+@media (max-width: 960px) {
+  .spot-card { grid-template-columns: 1fr; }
+  .spot-card-img { aspect-ratio: 16/9; }
+  .spot-card-body { padding: 20px; }
+  .course-list { grid-template-columns: 1fr; }
+  .hub-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hub-card { aspect-ratio: 16/9; }
+  .sight-highlight { grid-template-columns: repeat(2, 1fr); }
+  .breadcrumb { padding: 12px 0; margin-top: 60px; }
+  .article-section { padding: 48px 0; }
+  .page-hero { min-height: 32vh; }
+}
+
+@media (max-width: 480px) {
+  .sight-highlight { grid-template-columns: 1fr; }
+  .breadcrumb-list { font-size: 12px; }
+  .okami-quote { padding: 24px 20px; }
+  .okami-quote p { padding: 0 24px; }
+}
