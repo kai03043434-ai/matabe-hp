@@ -483,3 +483,44 @@
   .okami-quote { padding: 24px 20px; }
   .okami-quote p { padding: 0 24px; }
 }
+
+/* iPhone・モバイル全般の追加調整 */
+@media (max-width: 768px) {
+  /* 観光スポットカードの画像を適切サイズに */
+  .spot-card-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9 !important;
+    object-fit: cover;
+  }
+  /* CTAブロックのpadding調整 */
+  .cta-block {
+    padding: 40px 20px;
+    margin: 32px 0;
+    max-width: 100%;
+  }
+  .cta-block h3 { font-size: 19px; }
+  .cta-block p { font-size: 13px; }
+  /* ページヒーローの調整 */
+  .page-hero {
+    min-height: 30svh;
+  }
+  /* セクション全体のテキスト中央配置を強化 */
+  .article-section {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  /* 画像はみ出し防止 */
+  .article-section img,
+  .spot-card-img,
+  .cuisine-card img,
+  .hub-card img,
+  .sight-card img {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* About画像の調整 */
+  .about-img img {
+    width: 100%;
+  }
+}
