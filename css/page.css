@@ -436,8 +436,41 @@
   .spot-card-img { aspect-ratio: 16/9; }
   .spot-card-body { padding: 20px; }
   .course-list { grid-template-columns: 1fr; }
-  .hub-grid { grid-template-columns: 1fr; gap: 16px; }
-  .hub-card { aspect-ratio: 16/9; }
+  .hub-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  /* スマホでは hub-card を「画像→下に文字」の縦並びに変更 */
+  .hub-card {
+    aspect-ratio: auto;
+    background: #fff;
+    color: var(--color-text);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .hub-card img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    display: block;
+  }
+  .hub-card::after { display: none; }
+  .hub-card-content {
+    position: relative;
+    padding: 18px 20px 22px;
+  }
+  .hub-card-en { color: var(--color-sub); }
+  .hub-card h3 {
+    font-size: 19px;
+    color: var(--color-main);
+    text-shadow: none;
+    margin-bottom: 8px;
+  }
+  .hub-card p {
+    color: var(--color-text);
+    text-shadow: none;
+    opacity: 1;
+  }
+
   .sight-highlight { grid-template-columns: repeat(2, 1fr); }
   .breadcrumb { padding: 12px 0; margin-top: 60px; }
   .article-section { padding: 48px 0; }

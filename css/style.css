@@ -489,6 +489,8 @@ a { color: var(--color-main); text-decoration: none; }
   grid-template-columns: 1fr 1.5fr;
   gap: 40px;
 }
+.access-grid > * { min-width: 0; }
+.access-map iframe { max-width: 100%; }
 .access-info h3 {
   font-size: 18px;
   color: var(--color-main);
