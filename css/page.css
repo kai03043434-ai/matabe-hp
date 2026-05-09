@@ -195,6 +195,18 @@
   box-shadow: var(--shadow-sm);
   transition: transform .3s, box-shadow .3s;
 }
+.spot-card > * { min-width: 0; }
+
+/* グリッド子要素の min-width: 0 を全グリッドに保険として適用
+   （画像が大きい場合にカラムを膨張させない） */
+.hub-grid > *,
+.sight-highlight > *,
+.cuisine-grid > *,
+.plans-grid > *,
+.course-list > *,
+.about-grid > *,
+.split-grid > *,
+.access-grid > * { min-width: 0; }
 .spot-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .spot-card-img {
   aspect-ratio: 4/3;
