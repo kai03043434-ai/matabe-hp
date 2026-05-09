@@ -412,11 +412,16 @@
   font-size: 22px;
   margin-bottom: 12px;
   letter-spacing: .04em;
+  color: #fff;
+  border-bottom: 2px solid var(--color-sub);
+  display: inline-block;
+  padding-bottom: 10px;
 }
 .cta-block p {
   font-size: 14px;
-  opacity: .9;
+  opacity: .95;
   margin-bottom: 24px;
+  color: #fff;
 }
 .cta-block .btn {
   background: #fff;
