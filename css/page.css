@@ -83,18 +83,22 @@
   margin-bottom: 12px;
 }
 .page-hero-ja {
-  font-size: clamp(28px, 5vw, 48px);
+  font-size: clamp(26px, 5vw, 48px);
   font-weight: 500;
   letter-spacing: .08em;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 16px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .page-hero-sub {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.9;
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   opacity: 0.95;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ============ 記事本文（about・cuisine・rooms等共通）============ */
@@ -111,15 +115,21 @@
   padding-bottom: 8px;
   border-bottom: 2px solid var(--color-sub);
   letter-spacing: .04em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .article-section h4 {
   font-size: 17px;
   color: var(--color-main);
   margin: 24px 0 8px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .article-section p {
-  margin-bottom: 16px;
-  line-height: 1.9;
+  margin-bottom: 18px;
+  line-height: 1.95;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .article-section img {
   border-radius: 8px;
