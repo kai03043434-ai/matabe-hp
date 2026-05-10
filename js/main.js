@@ -53,6 +53,9 @@
       if (el.dataset.brWrapped === '1') return;
       el.dataset.brWrapped = '1';
 
+      // すでに手動でbrが入っている要素はスキップ（手動レイアウトを優先）
+      if (el.querySelector('br')) return;
+
       // 子要素のテキストノードのみ走査して、句読点後にbrを差し込む
       const textNodes = [];
       const walker = document.createTreeWalker(
