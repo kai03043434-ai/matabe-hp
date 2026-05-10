@@ -76,21 +76,22 @@
 
       textNodes.forEach(textNode => {
         const text = textNode.textContent;
-        if (!/[、。]/.test(text)) return;
+        if (!/[、。（]/.test(text)) return;
 
-        // 「、」または「。」で分割し、後ろに残テキストがある場合のみ<br>を挿入
-        const parts = text.split(/([、。])/);
+        // 「、」「。」の後 と「（」の前 で分割
+        // (?<=、|。) で 、。 の後を分割位置に
+        // (?=（) で 「（」 の前を分割位置に
+        const parts = text.split(/(?<=、|。)|(?=（)/);
         const frag = document.createDocumentFragment();
 
         for (let i = 0; i < parts.length; i++) {
           const part = parts[i];
           if (!part) continue;
           frag.appendChild(document.createTextNode(part));
-          // 句読点の場合、その後にコンテンツが続く場合のみ <br> を挿入
-          if ((part === '、' || part === '。')) {
+          // 最後の部分でなければ <br> を挿入
+          if (i < parts.length - 1) {
             const rest = parts.slice(i + 1).join('').trim();
             if (rest) {
-              // 直後の文字が改行を含まないことを確認
               frag.appendChild(document.createElement('br'));
             }
           }

@@ -498,6 +498,19 @@
 
 /* iPhone・モバイル全般の追加調整 */
 @media (max-width: 768px) {
+  /* 「・」を含む長いリストもwrap（季節料理カレンダー、釣り魚種等） */
+  .calendar-table td,
+  .feature-list li,
+  .spot-desc {
+    word-break: break-all;
+  }
+  /* keep-all は無効化（・/／ でも改行できるように） */
+  .article-section p,
+  .article-section li {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
   /* 観光スポットカードの画像を適切サイズに */
   .spot-card-img {
     width: 100% !important;
