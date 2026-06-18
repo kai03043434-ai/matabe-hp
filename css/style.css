@@ -669,3 +669,46 @@ a { color: var(--color-main); text-decoration: none; }
   .logo-main { font-size: 17px; }
   .logo-sub { font-size: 10px; }
 }
+
+/* ============ 言語切替（日本語 / Français）============ */
+.lang-switch {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--color-sub);
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+.lang-switch .lang-opt {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--color-main);
+  padding: 6px 12px;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.lang-switch .lang-opt + .lang-opt {
+  border-left: 1px solid var(--color-sub);
+}
+.lang-switch .lang-opt.is-active {
+  background: var(--color-main);
+  color: #fff;
+  cursor: default;
+}
+.lang-switch .lang-opt:not(.is-active):hover {
+  background: rgba(201, 166, 107, 0.20);
+}
+@media (max-width: 960px) {
+  /* スマホではナビが隠れるので、電話＋言語＋ハンバーガーを右寄せの密集グループに */
+  .header-tel { margin-left: auto; }
+  .hamburger { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .lang-switch .lang-opt { font-size: 11px; padding: 6px 9px; }
+}

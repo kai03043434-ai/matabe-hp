@@ -12,6 +12,12 @@
 - [周辺観光](https://matabee-ryokan.netlify.app/sightseeing/) — 三方五湖エリア10スポット・モデルコース3案
 - [料金・アクセス](https://matabee-ryokan.netlify.app/plans-access/) — 料金・チェックイン・アクセス・予約
 
+## 言語 / Langues
+- 日本語（既定）：https://matabee-ryokan.netlify.app/
+- Français（フランス語版・全8ページ）：https://matabee-ryokan.netlify.app/fr/
+- 各ページ右上の「日本語 / FR」ボタンで切り替え可能。日仏ページは hreflang で相互リンク済み。
+- Version française intégrale (8 pages) de l'auberge traditionnelle japonaise Ryokan Matabee, au bord du lac Hiruga à Mihama (préfecture de Fukui) : cuisine de la mer de Wakasa, fugu, crabe d'Echizen, bain familial privatif, pêche et vélo (tour des cinq lacs de Mikata). Réservation par téléphone uniquement : +81-770-32-0461.
+
 ## 基本情報
 - 正式名称：旅館またべゑ（読み：りょかん またべえ）
 - 女将：高橋良江
