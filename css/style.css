@@ -712,3 +712,10 @@ a { color: var(--color-main); text-decoration: none; }
 @media (max-width: 480px) {
   .lang-switch .lang-opt { font-size: 11px; padding: 6px 9px; }
 }
+
+/* ============ 線画アイコン（2026-09-24 絵文字から置き換え） ============ */
+.ico { display: inline-block; width: 1em; height: 1em; vertical-align: -0.14em; flex-shrink: 0; }
+.badge-icon, .feat-icon, .course-icon { color: var(--color-accent); }
+.cert-icon { color: var(--color-sub); line-height: 1; display: flex; }
+.feat-icon .ico, .course-icon .ico { vertical-align: 0; }
+.cert-text .small { text-wrap: pretty; }
